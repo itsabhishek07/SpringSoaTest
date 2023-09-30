@@ -1,0 +1,76 @@
+<template>
+
+    <center>
+        <u><b><h1>Displaying  List of 10 most recently created Accounts</h1></b></u>
+    </center>
+    <br/>
+    <br/>
+    <center>
+        <lightning-button label="get Records" onclick={handleSearch} variant="brand"></lightning-button>
+    </center>
+    <br/>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-var-m-top_small">
+        <thead>
+            <tr class="slds-line-height_reset">
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="ID">ID</div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Name">Name</div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Phone">Phone</div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Rating">Rating</div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Type">Type</div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Industry">Industry</div>
+                </th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <template for:each={SearchResult} for:item="Acc">
+                <tr class="slds-hint-parent" key={Acc.Id}>
+
+                    <td>
+                        <div class="slds-truncate">{Acc.Id}</div>
+                    </td>
+               
+                    <td>
+                       <div class="slds-truncate">{Acc.Name}</div>
+                    </td>
+
+                    <td>
+                        <div class="slds-truncate">{Acc.Phone}</div>
+                     </td>
+                   <td>
+                      <div class="slds-truncate">
+                          <div class="slds-truncate">{Acc.Rating}</div>
+                      </div>
+                   </td>
+                   <td>
+                      <div class="slds-truncate">{Acc.Type}</div>
+                   </td>
+
+                   <td>
+                    <div class="slds-truncate">{Acc.Industry}</div>
+                 </td>
+
+              </tr>
+            </template>
+        </tbody>
+    </table> 
+</template>
